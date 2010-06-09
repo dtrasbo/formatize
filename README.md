@@ -44,8 +44,8 @@ Or you can specify multiple options:
     # => "This is worded &lt;strong&gt;strongly&lt;/strong&gt;"
 
 The `textilize_without_paragraph` works similarly except it omits the
-surrounding `<p>` tag. Check out the documentation for
-[`RedCloth::TextileDoc`](http://redcloth.rubyforge.org/classes/RedCloth/TextileDoc.html)
+surrounding `<p>` tag. Check out the
+[`documentation for RedCloth::TextileDoc`](http://redcloth.rubyforge.org/classes/RedCloth/TextileDoc.html)
 for an overview on the options available.
 
 ### The `markdown` helper
