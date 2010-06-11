@@ -1,8 +1,11 @@
 Formatize
 =========
 
-Plugin containing the `textilize`, `textilize_without_paragraph`, and
-`markdown` helper methods removed from Rails.
+The `textilize`, `textilize_without_paragraph`, and `markdown` helper methods
+will not be available from the next version of Rails 3 and on. Formatize
+brings them back. They were removed in
+[this commit.](http://github.com/rails/rails/commit/0919c0dbca3df02f5cfff7dde4f61b85ef16d886)
+If you are running edge Rails, Formatize can already be useful now.
 
 Installation
 ------------
