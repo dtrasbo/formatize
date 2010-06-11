@@ -1,5 +1,5 @@
-require 'formatize/helpers'
+require 'formatize/helper'
 
 ActiveSupport.on_load(:action_view) do
-  include Formatize::Helpers
+  include Formatize::Helper
 end

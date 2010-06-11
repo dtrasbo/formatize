@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.email  = 'david@loudthinking.com'
 
   s.homepage = 'http://github.com/dtrasbo/formatize'
-  s.summary  = 'Plugin containing the textilize, textilize_without_paragraph, and markdown helpers removed from Rails.'
+  s.summary  = 'Plugin containing the textilize, textilize_without_paragraph, and markdown helper methods removed from Rails.'
 
   s.files = Dir['lib/**/*', 'LICENSE', 'README.md']
 

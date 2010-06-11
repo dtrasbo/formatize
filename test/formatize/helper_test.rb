@@ -1,7 +1,7 @@
 require 'test_helper'
 
-class FormatizeHelpersTest < ActionView::TestCase
-  tests Formatize::Helpers
+class FormatizeHelperTest < ActionView::TestCase
+  tests Formatize::Helper
 
   def test_textilize_should_be_html_safe
     assert textilize("*This is Textile!*  Rejoice!").html_safe?

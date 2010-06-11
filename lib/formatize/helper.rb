@@ -1,5 +1,5 @@
 module Formatize
-  module Helpers
+  module Helper
     # Returns the text with all the Textile[http://www.textism.com/tools/textile] codes turned into HTML tags.
     #
     # You can learn more about Textile's syntax at its website[http://www.textism.com/tools/textile].

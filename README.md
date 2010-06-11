@@ -2,7 +2,7 @@ Formatize
 =========
 
 Plugin containing the `textilize`, `textilize_without_paragraph`, and
-`markdown` helpers removed from Rails.
+`markdown` helper methods removed from Rails.
 
 Installation
 ------------
@@ -23,9 +23,9 @@ automatically when installing the gem.
 Usage
 -----
 
-### The `textilize` & `textilize_without_paragraph` helpers
+### The `textilize` & `textilize_without_paragraph` helper methods
 
-The `textilize` helper accepts a string of
+The `textilize` helper method accepts a string of
 [Textile](http://redcloth.org/textile) and one or more options. In most cases
 the default behavior will be suitable and you will not have to pass it any options:
 
@@ -48,9 +48,9 @@ surrounding `<p>` tag. Check out the
 [documentation for `RedCloth::TextileDoc`](http://redcloth.rubyforge.org/classes/RedCloth/TextileDoc.html)
 for an overview on the options available.
 
-### The `markdown` helper
+### The `markdown` helper method
 
-The `markdown` helper accepts a string of
+The `markdown` helper method accepts a string of
 [Markdown](http://daringfireball.net/projects/markdown/):
 
     markdown("We are using __Markdown__ now!")
