@@ -27,7 +27,6 @@ module Formatize
     def textilize(text, *options)
       require 'RedCloth'
 
-      options ||= [:hard_breaks]
       text = sanitize(text) unless text.html_safe? || options.delete(:safe)
 
       if text.blank?
