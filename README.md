@@ -65,6 +65,35 @@ before conversion:
     markdown("<em>We are using __Markdown__ now!</em>", :safe => true)
     # => "<p><em>We are using <strong>Markdown</strong> now!</em></p>"
 
+Compatibility
+-------------
+
+There will be maintained compatibility with the latest final Ruby 1.8 and 1.9
+versions, which at the time of writing means 1.8.7 and 1.9.1 respectively. When
+Ruby 1.8.8 is released, for example, there will not be made an effort to
+maintain backwards compatibility with 1.8.7. Formatize is also compatible with
+Ruby 1.9.2 Preview 3.
+
+The `textilize`, `textilize_without_paragraph`, and `markdown` helper methods
+were removed after the release of Rails 3.0.0 Beta 4, so when the next
+prerelease of Rails 3.0.0 is out, Formatize will be updated (if necessary) to
+be compatible with that. However, there will not be made an effort to maintain
+backwards compatibility with prereleases of Rails 3.0.0 in the future. As soon
+as Rails 3.0.0 Final is released Formatize 1.0.0 Final will be released, and
+all future Formatize versions will maintain compatibility with the latest Rails
+3.x versions.
+
+What that means is that when Rails 3.0.1 is released there will not be made an
+effort to maintain backwards compatibility with 3.0.0, because 3.0.1 is the
+latest 3.0 version. The reason for that is that it should be fairly straight
+forward to upgrade from, for example, Rails 3.0.0 to 3.0.1, but it might not be
+as easy to upgrade from 3.0.5 to 3.1.0.
+
+If one day a new Ruby/Rails version is released and there is no sensible way to
+maintain the level of backwards compatibility promised above, a new major
+version of Formatize will be released. If Formatize 2 is released one day,
+Formatize 1 will be maintained in a separate branch.
+
 Copyright & Licensing
 ---------------------
 
