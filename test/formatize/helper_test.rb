@@ -3,6 +3,10 @@ require 'test_helper'
 class FormatizeHelperTest < ActionView::TestCase
   tests Formatize::Helper
 
+  def test_action_view_includes_formatize
+    assert ActionView::Base.include?(Formatize::Helper)
+  end
+
   def test_textilize_should_be_html_safe
     assert textilize("*This is Textile!*  Rejoice!").html_safe?
   end
