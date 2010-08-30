@@ -4,11 +4,11 @@ Gem::Specification.new do |s|
   s.name    = 'formatize'
   s.version = Formatize::VERSION
 
-  s.author = 'David Heinemeier Hansson'
-  s.email  = 'david@loudthinking.com'
+  s.author = 'David Trasbo'
+  s.email  = 'me@dtrasbo.com'
 
   s.homepage = 'http://github.com/dtrasbo/formatize'
-  s.summary  = 'Plugin containing the textilize, textilize_without_paragraph, and markdown helper methods removed from Rails.'
+  s.summary  = 'Gem containing the textilize, textilize_without_paragraph, and markdown helper methods removed from Rails.'
 
   s.files = Dir['lib/**/*', 'LICENSE', 'README.md']
 
