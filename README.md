@@ -77,6 +77,14 @@ eventually.
 The latest versions in all the 3.0 series. This is likely to change when
 4.0 is released.
 
+Dependencies
+------------
+
+* `RedCloth` gem
+* `bluecloth` gem
+
+![Dependency status badge](https://gemnasium.com/dtrasbo/formatize.png)
+
 Copyright & Licensing
 ---------------------
 
