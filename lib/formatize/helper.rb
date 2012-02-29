@@ -89,3 +89,4 @@ module Formatize
     end
   end
 end
+

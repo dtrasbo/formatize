@@ -99,3 +99,4 @@ class FormatizeHelperTest < ActionView::TestCase
     assert_equal("<p>This is one scary world.</p>\n\n<p>True.</p>", markdown("This is one scary world.\n\nTrue."))
   end
 end
+
