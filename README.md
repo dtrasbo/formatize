@@ -58,18 +58,29 @@ before conversion:
 Compatibility
 -------------
 
-I'll maintain compatibility with the latest Ruby 1.8 and 1.9 versions, which
-for the moment being means Ruby 1.8.7 and 1.9.2. It might work with others but
-it's not guaranteed. Patches welcome.
+Feel free to try other versions. Minor patches to support other versions
+are welcome.
 
-As for Rails, I'll make sure Formatize works with the latest 3.x versions,
-which for the moment being just means Rails 3.0.0. If, say, the latest 3.0
-version was 3.0.5 and the latest 3.1 version was 3.1.1, Formatize would work
-with both.
+### Ruby versions
+* 1.9.3-p125
+* 1.8.7-p358
+
+Latest versions in the 1.8 and 1.9 series. Generally, Formatize will not
+jump through hoops to support other versions. 1.8 support may be dropped
+eventually.
+
+### Rails versions
+* 3.2.1
+* 3.1.3
+* 3.0.11
+
+The latest versions in all the 3.0 series. This is likely to change when
+4.0 is released.
 
 Copyright & Licensing
 ---------------------
 
-Copyright (c) 2010 David Trasbo
+Copyright (c) 2012 David Trasbo
 
 Released under the MIT License. See LICENSE for details.
+
