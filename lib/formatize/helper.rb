@@ -27,7 +27,11 @@ module Formatize
     def textilize(text, *flags)
       require 'RedCloth'
 
-      text = sanitize(text) unless text.html_safe? || flags.delete(:safe)
+      if safe = flags.delete(:safe)
+        ActiveSupport::Deprecation.warn('The :safe flag is deprecated. Mark the input HTML safe instead.')
+      end
+
+      text = sanitize(text) unless text.html_safe? || safe
 
       if text.blank?
         ""
@@ -83,7 +87,11 @@ module Formatize
     def markdown(text, *flags)
       require 'bluecloth'
 
-      text = sanitize(text) unless text.html_safe? || flags.delete(:safe)
+      if safe = flags.delete(:safe)
+        ActiveSupport::Deprecation.warn('The :safe flag is deprecated. Mark the input HTML safe instead.')
+      end
+
+      text = sanitize(text) unless text.html_safe? || safe
 
       if text.blank?
         ""
