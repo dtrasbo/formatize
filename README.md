@@ -6,7 +6,7 @@ As of version 3, Rails doesn't have the `textilize`,
 them back. Drop it into the old application you're upgrading and it'll smoothen
 the process just that little bit more.
 
-[![Build status badge](http://travis-ci.org/dtrasbo/formatize.png)](http://travis-ci.org/dtrasbo/formatize)
+[![Build status badge](https://secure.travis-ci.org/dtrasbo/formatize.png)](http://travis-ci.org/dtrasbo/formatize)
 
 Installation
 ------------
