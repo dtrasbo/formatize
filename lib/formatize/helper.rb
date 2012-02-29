@@ -24,15 +24,15 @@ module Formatize
     #   textilize("This is worded <strong>strongly</strong>", :filter_html)
     #   # => "<p>This is worded &lt;strong&gt;strongly&lt;/strong&gt;</p>"
     #
-    def textilize(text, *options)
+    def textilize(text, *flags)
       require 'RedCloth'
 
-      text = sanitize(text) unless text.html_safe? || options.delete(:safe)
+      text = sanitize(text) unless text.html_safe? || flags.delete(:safe)
 
       if text.blank?
         ""
       else
-        RedCloth.new(text, options).to_html
+        RedCloth.new(text, flags).to_html
       end.html_safe
     end
 
@@ -54,10 +54,10 @@ module Formatize
     #
     #   textilize_without_paragraph("Visit the Rails website "here":http://www.rubyonrails.org/.)
     #   # => "Visit the Rails website <a href="http://www.rubyonrails.org/">here</a>."
-    def textilize_without_paragraph(text, *options)
+    def textilize_without_paragraph(text, *flags)
       require 'RedCloth'
 
-      textiled = textilize(text, *options)
+      textiled = textilize(text, *flags)
       if textiled[0..2] == "<p>" then textiled = textiled[3..-1] end
       if textiled[-4..-1] == "</p>" then textiled = textiled[0..-5] end
       return textiled
@@ -80,10 +80,10 @@ module Formatize
     #
     #   markdown('![The ROR logo](http://rubyonrails.com/images/rails.png "Ruby on Rails")')
     #   # => '<p><img src="http://rubyonrails.com/images/rails.png" alt="The ROR logo" title="Ruby on Rails" /></p>'
-    def markdown(text, *options)
+    def markdown(text, *flags)
       require 'bluecloth'
 
-      text = sanitize(text) unless text.html_safe? || options.delete(:safe)
+      text = sanitize(text) unless text.html_safe? || flags.delete(:safe)
 
       if text.blank?
         ""

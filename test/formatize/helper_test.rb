@@ -19,7 +19,7 @@ class FormatizeHelperTest < ActionView::TestCase
     assert_equal("", textilize(""))
   end
 
-  def test_textilize_with_options
+  def test_textilize_with_flags
     assert_equal("<p>This is worded &lt;strong&gt;strongly&lt;/strong&gt;</p>", textilize("This is worded <strong>strongly</strong>", :filter_html))
   end
 
@@ -27,7 +27,7 @@ class FormatizeHelperTest < ActionView::TestCase
     assert_equal("<p>This is worded <strong>strongly</strong></p>", textilize("This is worded <strong>strongly</strong><script>code!</script>"))
   end
 
-  def test_textilize_should_not_sanitize_input_if_safe_option
+  def test_textilize_should_not_sanitize_input_if_safe_flag
     assert_equal("<p>This is worded <strong>strongly</strong><script>code!</script></p>", textilize("This is worded <strong>strongly</strong><script>code!</script>", :safe))
   end
 
@@ -51,7 +51,7 @@ class FormatizeHelperTest < ActionView::TestCase
     assert_equal("", textilize_without_paragraph(""))
   end
 
-  def test_textilize_without_paragraph_with_options
+  def test_textilize_without_paragraph_with_flags
     assert_equal("This is worded &lt;strong&gt;strongly&lt;/strong&gt;", textilize_without_paragraph("This is worded <strong>strongly</strong>", :filter_html))
   end
 
@@ -59,7 +59,7 @@ class FormatizeHelperTest < ActionView::TestCase
     assert_equal("This is worded <strong>strongly</strong>", textilize_without_paragraph("This is worded <strong>strongly</strong><script>code!</script>"))
   end
 
-  def test_textilize_without_paragraph_should_not_sanitize_input_if_safe_option
+  def test_textilize_without_paragraph_should_not_sanitize_input_if_safe_flag
     assert_equal("This is worded <strong>strongly</strong><script>code!</script>", textilize_without_paragraph("This is worded <strong>strongly</strong><script>code!</script>", :safe))
   end
 
@@ -87,7 +87,7 @@ class FormatizeHelperTest < ActionView::TestCase
     assert_equal("<p>This is worded <strong>strongly</strong></p>", markdown("This is worded <strong>strongly</strong><script>code!</script>"))
   end
 
-  def test_markdown_should_not_sanitize_input_if_safe_option
+  def test_markdown_should_not_sanitize_input_if_safe_flag
     assert_equal("<p>This is worded <strong>strongly</strong><script>code!</script></p>", markdown("This is worded <strong>strongly</strong><script>code!</script>", :safe))
   end
 
