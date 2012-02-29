@@ -32,8 +32,7 @@ module Formatize
       if text.blank?
         ""
       else
-        textilized = RedCloth.new(text, options)
-        textilized.to_html
+        RedCloth.new(text, options).to_html
       end.html_safe
     end
 
@@ -85,7 +84,12 @@ module Formatize
       require 'bluecloth'
 
       text = sanitize(text) unless text.html_safe? || options.delete(:safe)
-      (text.blank? ? "" : BlueCloth.new(text).to_html).html_safe
+
+      if text.blank?
+        ""
+      else
+        BlueCloth.new(text).to_html
+      end.html_safe
     end
   end
 end
