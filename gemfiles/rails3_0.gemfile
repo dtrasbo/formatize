@@ -1,0 +1,4 @@
+source :rubygems
+gemspec :path => '../'
+gem 'actionpack', '3.0.11'
+
