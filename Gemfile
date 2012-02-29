@@ -1,5 +1,3 @@
 source :rubygems
+gemspec
 
-gem 'RedCloth',   '~> 4.2'
-gem 'bluecloth',  '~> 2.0'
-gem 'actionpack', '~> 3.0'
