@@ -72,9 +72,9 @@ jump through hoops to support other versions. 1.8 support may be dropped
 eventually.
 
 ### Rails versions
-* 3.2.1
-* 3.1.3
-* 3.0.11
+* 3.2.2
+* 3.1.4
+* 3.0.12
 
 The latest versions in all the 3.0 series. This is likely to change when
 4.0 is released.
