@@ -21,41 +21,49 @@ Usage
 ### The `textilize` & `textilize_without_paragraph` helper methods
 
 The `textilize` helper method accepts a string of
-[Textile](http://redcloth.org/textile) and one or more options. In most cases
-the default behavior will be suitable and you will not have to pass it any options:
+[Textile](http://redcloth.org/textile) and one or more flags. Often, the
+default behavior will be suitable and you will not have to pass it any flags:
 
     textilize("*This is Textile!*  Rejoice!")
     # => "<p><strong>This is Textile!</strong>  Rejoice!</p>"
 
-Sometimes, however, you want to customize how RedCloth parses your Textile. You
-can specify a single option:
+When necessary, flags are listed as such:
 
-    textilize("This is worded <strong>strongly</strong>", :filter_html)
-    # => "<p>This is worded &lt;strong&gt;strongly&lt;/strong&gt;</p>"
+    textilize("(snip)", :flag1, :flag2, :flag3)
+    # => "(snip)"
 
-Or you can specify multiple options:
-
-    textilize("This is worded <strong>strongly</strong>", :filter_html, :lite_mode)
-    # => "This is worded &lt;strong&gt;strongly&lt;/strong&gt;"
-
-The `textilize_without_paragraph` works similarly except it omits the
-surrounding `<p>` tag. Check out the
-[documentation for `RedCloth::TextileDoc`](http://redcloth.rubyforge.org/classes/RedCloth/TextileDoc.html)
-for an overview on the options available.
+[The `RedCloth` documentation](http://redcloth.rubyforge.org/classes/RedCloth/TextileDoc.html)
+lists the available flags. The `textilize_without_paragraps` method
+delegates to `textilize` but strips the surrounding `<p>` tags.
 
 ### The `markdown` helper method
 
 The `markdown` helper method accepts a string of
-[Markdown](http://daringfireball.net/projects/markdown/):
+[Markdown](http://daringfireball.net/projects/markdown/) and one or more
+flags. Often, the default behavior will be suitable and you will not have
+to pass it any flags:
 
     markdown("We are using __Markdown__ now!")
     # => "<p>We are using <strong>Markdown</strong> now!</p>"
 
-If you set the `:safe` option to `true` the input string will be not sanitized
-before conversion:
+When necessary, flags are listed as such:
 
-    markdown("<em>We are using __Markdown__ now!</em>", :safe => true)
-    # => "<p><em>We are using <strong>Markdown</strong> now!</em></p>"
+    markdown("(snip)", :flag1, :flag2, :flag3)
+    # => "(snip)"
+
+[The `bluecloth` documentation](http://rubydoc.info/gems/bluecloth/BlueCloth)
+lists the available flags.
+
+Sanitization
+------------
+
+Both `textilize` and `markdown` sanitizes the input using Rails'
+`sanitize` prior to parsing. Since both gems can do this themselves,
+it's useful to be able to bypass the pre-parsing sanitization. Two ways:
+
+1. Pass a string that has been marked HTML safe. (Preferred).
+2. Use the special `:safe` flag, which is not passed on to the parser.
+   _(Deprecated in 1.1, removed in 2.0)._ 
 
 Compatibility
 -------------

@@ -1,28 +1,26 @@
 module Formatize
   module Helper
-    # Returns the text with all the Textile[http://www.textism.com/tools/textile] codes turned into HTML tags.
+    # Accepts a string of {Textile}(http://redcloth.org/textile) and one or
+    # more flags. Often, the default behavior will be suitable and you will not
+    # have to pass it any flags:
     #
-    # You can learn more about Textile's syntax at its website[http://www.textism.com/tools/textile].
-    # <i>This method is only available if RedCloth[http://redcloth.org/] is available</i>.
-    #
-    # ==== Examples
     #   textilize("*This is Textile!*  Rejoice!")
     #   # => "<p><strong>This is Textile!</strong>  Rejoice!</p>"
     #
-    #   textilize("I _love_ ROR(Ruby on Rails)!")
-    #   # => "<p>I <em>love</em> <acronym title="Ruby on Rails">ROR</acronym>!</p>"
+    # When necessary, flags are listed as such:
     #
-    #   textilize("h2. Textile makes markup -easy- simple!")
-    #   # => "<h2>Textile makes markup <del>easy</del> simple!</h2>"
+    #   textilize("(snip)", :flag1, :flag2, :flag3)
+    #   # => "(snip)"
     #
-    #   textilize("Visit the Rails website "here":http://www.rubyonrails.org/.)
-    #   # => "<p>Visit the Rails website <a href="http://www.rubyonrails.org/">here</a>.</p>"
+    # {The +RedCloth+ documentation}(http://redcloth.rubyforge.org/classes/RedCloth/TextileDoc.html)
+    # lists the available flags.
     #
-    #   textilize("This is worded <strong>strongly</strong>")
-    #   # => "<p>This is worded <strong>strongly</strong></p>"
+    # It sanitizes the input using Rails' +sanitize+ prior to parsing.
+    # There are two ways to bypass pre-parsing sanitization: 
     #
-    #   textilize("This is worded <strong>strongly</strong>", :filter_html)
-    #   # => "<p>This is worded &lt;strong&gt;strongly&lt;/strong&gt;</p>"
+    # 1. Pass a string that has been marked HTML safe. (Preferred).
+    # 2. Use the special `:safe` flag, which is not passed on to the parser.
+    #    _(Deprecated in 1.1, removed in 2.0)._
     #
     def textilize(text, *flags)
       require 'RedCloth'
@@ -40,24 +38,9 @@ module Formatize
       end.html_safe
     end
 
-    # Returns the text with all the Textile codes turned into HTML tags,
-    # but without the bounding <p> tag that RedCloth adds.
+    # Delegates to +textilize+ but strips the surrounding <tt><p></tt>
+    # tags.
     #
-    # You can learn more about Textile's syntax at its website[http://www.textism.com/tools/textile].
-    # <i>This method is only available if RedCloth[http://redcloth.org/] is available</i>.
-    #
-    # ==== Examples
-    #   textilize_without_paragraph("*This is Textile!*  Rejoice!")
-    #   # => "<strong>This is Textile!</strong>  Rejoice!"
-    #
-    #   textilize_without_paragraph("I _love_ ROR(Ruby on Rails)!")
-    #   # => "I <em>love</em> <acronym title="Ruby on Rails">ROR</acronym>!"
-    #
-    #   textilize_without_paragraph("h2. Textile makes markup -easy- simple!")
-    #   # => "<h2>Textile makes markup <del>easy</del> simple!</h2>"
-    #
-    #   textilize_without_paragraph("Visit the Rails website "here":http://www.rubyonrails.org/.)
-    #   # => "Visit the Rails website <a href="http://www.rubyonrails.org/">here</a>."
     def textilize_without_paragraph(text, *flags)
       require 'RedCloth'
 
@@ -67,23 +50,28 @@ module Formatize
       return textiled
     end
 
-    # Returns the text with all the Markdown codes turned into HTML tags.
-    # <i>This method requires BlueCloth[http://www.deveiate.org/projects/BlueCloth]
-    # to be available</i>.
+    # Accepts a string of {Markdown}(http://daringfireball.net/projects/markdown/)
+    # and one or more flags. Often, the default behavior will be suitable and
+    # you will not have to pass it any flags:
     #
-    # ==== Examples
     #   markdown("We are using __Markdown__ now!")
     #   # => "<p>We are using <strong>Markdown</strong> now!</p>"
     #
-    #   markdown("We like to _write_ `code`, not just _read_ it!")
-    #   # => "<p>We like to <em>write</em> <code>code</code>, not just <em>read</em> it!</p>"
+    # When necessary, flags are listed as such:
     #
-    #   markdown("The [Markdown website](http://daringfireball.net/projects/markdown/) has more information.")
-    #   # => "<p>The <a href="http://daringfireball.net/projects/markdown/">Markdown website</a>
-    #   #     has more information.</p>"
+    #   markdown("(snip)", :flag1, :flag2, :flag3)
+    #   # => "(snip)"
     #
-    #   markdown('![The ROR logo](http://rubyonrails.com/images/rails.png "Ruby on Rails")')
-    #   # => '<p><img src="http://rubyonrails.com/images/rails.png" alt="The ROR logo" title="Ruby on Rails" /></p>'
+    # {The +bluecloth+ documentation}(http://rubydoc.info/gems/bluecloth/BlueCloth)
+    # lists the available flags.
+    #
+    # It sanitizes the input using Rails' +sanitize+ prior to parsing.
+    # There are two ways to bypass pre-parsing sanitization: 
+    #
+    # 1. Pass a string that has been marked HTML safe. (Preferred).
+    # 2. Use the special `:safe` flag, which is not passed on to the parser.
+    #    _(Deprecated in 1.1, removed in 2.0)._
+    #
     def markdown(text, *flags)
       require 'bluecloth'
 
