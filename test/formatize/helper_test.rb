@@ -83,6 +83,10 @@ class FormatizeHelperTest < ActionView::TestCase
     assert_equal("", markdown(""))
   end
 
+  def test_markdown_with_flags
+    assert_equal("<p>This is worded &lt;strong>strongly&lt;/strong></p>", markdown("This is worded <strong>strongly</strong>", :escape_html))
+  end
+
   def test_markdown_should_sanitize_unsafe_input
     assert_equal("<p>This is worded <strong>strongly</strong></p>", markdown("This is worded <strong>strongly</strong><script>code!</script>"))
   end

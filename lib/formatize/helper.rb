@@ -84,7 +84,12 @@ module Formatize
       if text.blank?
         ""
       else
-        BlueCloth.new(text).to_html
+        flags_hash = {}
+        flags.each do |flag|
+          flags_hash[flag] = true
+        end
+
+        BlueCloth.new(text, flags_hash).to_html
       end.html_safe
     end
   end
