@@ -1,6 +1,6 @@
 module Formatize
   module Helper
-    # Accepts a string of [Textile](http://redcloth.org/textile) and one or
+    # Accepts a string of Textile {http://redcloth.org/textile} and one or
     # more flags. Often, the default behavior will be suitable and you will not
     # have to pass it any flags:
     #
@@ -12,7 +12,7 @@ module Formatize
     #   textilize("(snip)", :flag1, :flag2, :flag3)
     #   # => "(snip)"
     #
-    # [The +RedCloth+ documentation](http://redcloth.rubyforge.org/classes/RedCloth/TextileDoc.html)
+    # The +RedCloth+ documentation {http://redcloth.rubyforge.org/classes/RedCloth/TextileDoc.html}
     # lists the available flags.
     #
     # It sanitizes the input using Rails' +sanitize+ prior to parsing.
@@ -48,7 +48,7 @@ module Formatize
       return textiled
     end
 
-    # Accepts a string of [Markdown](http://daringfireball.net/projects/markdown/)
+    # Accepts a string of Markdown {http://daringfireball.net/projects/markdown/}
     # and one or more flags. Often, the default behavior will be suitable and
     # you will not have to pass it any flags:
     #
@@ -60,7 +60,7 @@ module Formatize
     #   markdown("(snip)", :flag1, :flag2, :flag3)
     #   # => "(snip)"
     #
-    # [The +bluecloth+ documentation](http://rubydoc.info/gems/bluecloth/BlueCloth)
+    # The +bluecloth+ documentation {http://rubydoc.info/gems/bluecloth/BlueCloth}
     # lists the available flags.
     #
     # It sanitizes the input using Rails' +sanitize+ prior to parsing.
