@@ -42,8 +42,6 @@ module Formatize
     # tags.
     #
     def textilize_without_paragraph(text, *flags)
-      require 'RedCloth'
-
       textiled = textilize(text, *flags)
       if textiled[0..2] == "<p>" then textiled = textiled[3..-1] end
       if textiled[-4..-1] == "</p>" then textiled = textiled[0..-5] end
