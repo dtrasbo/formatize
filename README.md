@@ -33,7 +33,7 @@ When necessary, flags are listed as such:
     # => "(snip)"
 
 [The `RedCloth` documentation](http://redcloth.rubyforge.org/classes/RedCloth/TextileDoc.html)
-lists the available flags. The `textilize_without_paragraps` method
+lists the available flags. The `textilize_without_paragraph` method
 delegates to `textilize` but strips the surrounding `<p>` tags.
 
 ### The `markdown` helper method
