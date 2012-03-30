@@ -33,7 +33,7 @@ When necessary, flags are listed as such:
     # => "(snip)"
 
 [The `RedCloth` documentation](http://redcloth.rubyforge.org/classes/RedCloth/TextileDoc.html)
-lists the available flags. The `textilize_without_paragraphs` method
+lists the available flags. The `textilize_without_paragraph` method
 delegates to `textilize` but strips the surrounding `<p>` tags.
 
 ### The `markdown` helper method
@@ -64,6 +64,10 @@ it's useful to be able to bypass the pre-parsing sanitization. Two ways:
 1. Pass a string that has been marked HTML safe. (Preferred).
 2. Use the special `:safe` flag, which is not passed on to the parser.
    _(Deprecated in 1.1, removed in 2.0)._ 
+
+With Rails' `sanitize`, if you don't bypass it, you can choose which tags and
+attributes to allow as described in the
+[documentation](http://api.rubyonrails.org/classes/ActionView/Helpers/SanitizeHelper.html#method-i-sanitize).
 
 Compatibility
 -------------
