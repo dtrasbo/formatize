@@ -65,6 +65,10 @@ it's useful to be able to bypass the pre-parsing sanitization. Two ways:
 2. Use the special `:safe` flag, which is not passed on to the parser.
    _(Deprecated in 1.1, removed in 2.0)._ 
 
+With Rails' `sanitize`, if you don't bypass it, you can choose which tags and
+attributes to allow as described in the
+[documentation](http://api.rubyonrails.org/classes/ActionView/Helpers/SanitizeHelper.html#method-i-sanitize).
+
 Compatibility
 -------------
 
