@@ -26,7 +26,7 @@ module Formatize
       require 'RedCloth'
 
       if flags.include?(:safe)
-        raise ArgumentError, 'The :safe flag has been removed. Mark the input HTML safe instead or downgrade to Formatize 1.1'
+        raise ArgumentError, 'The :safe flag has been removed. Mark the input HTML safe instead or downgrade to Formatize 1.x'
       end
 
       text = sanitize(text) unless text.html_safe?
@@ -74,7 +74,7 @@ module Formatize
       require 'bluecloth'
 
       if flags.include?(:safe)
-        raise ArgumentError, 'The :safe flag has been removed. Mark the input HTML safe instead or downgrade to Formatize 1.1'
+        raise ArgumentError, 'The :safe flag has been removed. Mark the input HTML safe instead or downgrade to Formatize 1.x'
       end
 
       text = sanitize(text) unless text.html_safe?
