@@ -45,7 +45,7 @@ module Formatize
       textiled = textilize(text, *flags)
       if textiled[0..2] == "<p>" then textiled = textiled[3..-1] end
       if textiled[-4..-1] == "</p>" then textiled = textiled[0..-5] end
-      return textiled
+      return textiled.html_safe
     end
 
     # Accepts a string of Markdown {http://daringfireball.net/projects/markdown/}
