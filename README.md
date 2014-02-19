@@ -1,6 +1,8 @@
 Formatize
 =========
 
+**ABANDONED.** *I'm sorry, but this project is no longer active. Feel free to fork the repo, copy the code, release the code under a different gem or whatever you need*
+
 As of version 3, Rails doesn't have the `textilize`,
 `textilize_without_paragraph`, and `markdown` helper methods. Formatize brings
 them back. Drop it into the old application you're upgrading and it'll smoothen
